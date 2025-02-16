@@ -1,0 +1,66 @@
+mport React, { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+
+const products = [
+  {
+    id: 1,
+    name: "Hoodie 1",
+    price: "$49.99",
+    image: "/resources/images/hoodies/hoodie1.jpg"
+  },
+  {
+    id: 2,
+    name: "Hoodie 2",
+    price: "$59.99",
+    image: "/resources/images/hoodies/hoodie2.jpg"
+  },
+  {
+    id: 3,
+    name: "Jumper 1",
+    price: "$39.99",
+    image: "/resources/images/jumpers/jumper1.jpg"
+  },
+  {
+    id: 4,
+    name: "Jumper 2",
+    price: "$44.99",
+    image: "/resources/images/jumpers/jumper2.jpg"
+  },
+  {
+    id: 5,
+    name: "T-Shirt 1",
+    price: "$19.99",
+    image: "/resources/images/tshirts/tshirt1.jpg"
+  },
+  {
+    id: 6,
+    name: "T-Shirt 2",
+    price: "$24.99",
+    image: "/resources/images/tshirts/tshirt2.jpg"
+  }
+];
+
+export default function EcommercePage() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+      {products.map((product) => (
+        <Card key={product.id} className="p-4 border rounded-xl">
+          <Image src={product.image} alt={product.name} width={200} height={200} className="rounded-lg" />
+          <CardContent>
+            <h2 className="text-lg font-bold">{product.name}</h2>
+            <p className="text-gray-600">{product.price}</p>
+            <Button onClick={() => addToCart(product)} className="mt-2">Add to Cart</Button>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  );
+}
