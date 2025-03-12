@@ -1,0 +1,18 @@
+/web_project
+│── /includes
+│   │── db.php  (Database connection)
+│   │── header.php (HTML Header)
+│   │── footer.php (HTML Footer)
+│── /auth
+│   │── login.php (User Login)
+│   │── register.php (User Registration)
+│   │── logout.php (Logout)
+│── /products
+│   │── index.php (Display Products)
+│   │── add.php (Add Product)
+│   │── edit.php (Edit Product)
+│   │── delete.php (Delete Product)
+│── index.php (Homepage)
+│── dashboard.php (User Dashboard)
+│── style.css (CSS)
+│── README.md (Project Documentation)
